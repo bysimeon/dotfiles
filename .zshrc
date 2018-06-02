@@ -63,7 +63,7 @@ DISABLE_AUTO_TITLE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -101,7 +101,7 @@ source $ZSH/oh-my-zsh.sh
 
 PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m] %{$reset_color%}> '
 
-# personal alias
+# personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
 function luv() {                                                          # opens pic of <3 in machfeh
     pic_path=$(find /Users/Simeon/Pictures/Teah -type f | gshuf -n 1);
@@ -109,9 +109,8 @@ function luv() {                                                          # open
 }
 
 alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
-alias msc='mpd & mpdscribble & ncmpcpp'                                   # music and scrobbling
+alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
 alias beeti='beet import -A ~/Music/iTunes/iTunes\ Media/Music'           # beet import music
-alias vtop='vtop --theme brew'                                            # vtop color scheme
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
 
 # alias
@@ -120,7 +119,7 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-# cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels

@@ -76,4 +76,6 @@ chunkc tiling::rule --owner \"Chrome\" --subrole AXStandardWindow --state tile
 chunkc tiling::rule --owner \"Finder\" --name Empty Trash --state float
 chunkc tiling::rule --owner \"Finder\" --name Copy --state float
 chunkc tiling::rule --owner \"Archive Utility\" --state float
+chunkc tiling::rule --owner \"The Unarchiver\" --state float
+chunkc tiling::rule --owner \"Time Machine\" --state float
 chunkc tiling::rule --owner \"Transmission\" --state float
