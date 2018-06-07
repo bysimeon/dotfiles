@@ -1,0 +1,14 @@
+directory: ~/Music/Library
+library: ~/Developer/musiclibrary.db
+
+plugins: ftintitle mpdupdate smartplaylist random embedart
+
+embedart:
+    auto: yes                              # Embed album art in the music files
+
+import:
+    move: yes
+
+mpdupdate:
+    host: localhost
+    port: 6600
