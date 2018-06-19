@@ -62,10 +62,8 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+  git zsh-autosuggestions
 )
-
-# zsh-autosuggestions
 
 source $ZSH/oh-my-zsh.sh
 
@@ -109,7 +107,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"        # This loads nvm bash_completion
 
 # personal
-echo pywal theme $(<~/.cache/wal/sequences)                               #pywal colortheme on load
+echo pywal theme $(<~/.cache/wal/sequences)                               # pywal colortheme on load
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
 function luv() {                                                          # opens pic of <3 in machfeh
     pic_path=$(find /Users/Simeon/Pictures/Teah -type f | gshuf -n 1);
@@ -121,8 +119,14 @@ alias light='wal -R -l'                                                   # ligh
 alias dark='wal -R'                                                       # dark wallpaper change
 alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
 alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import -A ~/Music/iTunes/iTunes\ Media/Music'           # beet import music
+alias beeti='beet import -A /Users/Simeon/Desktop/'                       # beet import music
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
+
+# virtualenvwrapper 
+
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source /usr/local/bin/virtualenvwrapper.sh
 
 # alias
 alias cp='cp -iv'                           # Preferred 'cp' implementation
