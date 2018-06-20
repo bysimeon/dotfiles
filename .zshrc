@@ -1,3 +1,5 @@
+echo $(<~/.cache/wal/sequences) color theme loaded                        # pywal colortheme on load
+
 # If you come from bash you might have to change your $PATH.
 PATH=/usr/bin:/usr/sbin:/bin:/sbin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -9,8 +11,6 @@ export PATH=$PATH:~/.nexustools
 export ZSH=/Users/Simeon/.oh-my-zsh
 
 ZSH_THEME="HUH"
-
-# echo $(<~/.cache/wal/sequences) color theme loaded                        #pywal colortheme on load
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -62,7 +62,8 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git zsh-autosuggestions
+  git 
+  # zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -96,18 +97,12 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
 # graphical customizaion
 
-PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m] %{$reset_color%}> '
-
-# node version manager
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                          # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"        # This loads nvm bash_completion
+PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m%{$reset_color%}] > '   # custom prompt'
 
 # personal
-echo pywal theme $(<~/.cache/wal/sequences)                               # pywal colortheme on load
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
 function luv() {                                                          # opens pic of <3 in machfeh
     pic_path=$(find /Users/Simeon/Pictures/Teah -type f | gshuf -n 1);
@@ -122,11 +117,9 @@ alias msc='mpd & ncmpcpp'                                                 # musi
 alias beeti='beet import -A /Users/Simeon/Desktop/'                       # beet import music
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
 
-# virtualenvwrapper 
-
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-source /usr/local/bin/virtualenvwrapper.sh
+# tool loaders
+alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
+alias loadenv='export WORKON_HOME=$HOME/.virtualenvs && export PROJECT_HOME=$HOME/Devel && source /usr/local/bin/virtualenvwrapper.sh'
 
 # alias
 alias cp='cp -iv'                           # Preferred 'cp' implementation
