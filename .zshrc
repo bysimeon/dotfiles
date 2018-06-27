@@ -100,7 +100,10 @@ source $ZSH/oh-my-zsh.sh
 
 # graphical customizaion
 
-PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m%{$reset_color%}] > '   # custom prompt'
+# PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m%{$reset_color%}] > '   # custom prompt'
+
+PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
+
 
 # personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
@@ -114,7 +117,7 @@ alias light='wal -R -l'                                                   # ligh
 alias dark='wal -R'                                                       # dark wallpaper change
 alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
 alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import -A /Users/Simeon/Desktop/'                       # beet import music
+alias beeti='beet import /Users/Simeon/Desktop/ && mpc update'            # beet import music
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
 
 # tool loaders
@@ -127,7 +130,7 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+# cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
@@ -160,3 +163,7 @@ alias ipInfo0='ipconfig getpacket en0'              # ipInfo0:      Get info on 
 alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on connections for en1
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
