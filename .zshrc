@@ -50,6 +50,7 @@ source $ZSH/oh-my-zsh.sh
 
 # graphical customizaion
 PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
+# ($(t | wc -l | sed -e"s/ *//"))
 
 # personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
@@ -63,8 +64,10 @@ alias light='wal -R -l'                                                   # ligh
 alias dark='wal -R'                                                       # dark wallpaper change
 alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
 alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'            # beet import music
+alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'         # beet import music
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
+alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
+alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list bugs'     # todo list
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
