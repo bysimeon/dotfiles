@@ -1,4 +1,4 @@
-echo $(<~/.cache/wal/sequences) color theme loaded                        # pywal colortheme on load
+(cat ~/.cache/wal/sequences &)                # pywal colortheme on load
 
 # If you come from bash you might have to change your $PATH.
 PATH=/usr/bin:/usr/sbin:/bin:/sbin
@@ -11,26 +11,6 @@ export PATH=$PATH:~/.nexustools
 export ZSH=/Users/Simeon/.oh-my-zsh
 
 ZSH_THEME="HUH"
-
-# Set list of themes to load
-# Setting this variable when ZSH_THEME=random
-# cause zsh load theme from this variable instead of
-# looking in ~/.oh-my-zsh/themes/
-# An empty array have no effect
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion. Case
-# sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
-
-# Uncomment the following line to change how often to auto-update (in days).
-# export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line to disable colors in ls.
 DISABLE_LS_COLORS="true"
@@ -63,47 +43,13 @@ ENABLE_CORRECTION="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git 
-  # zsh-autosuggestions
+  #zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-
 # graphical customizaion
-
-# PROMPT='[$fg[red]%~ %{$reset_color%}on $fg[cyan]%m%{$reset_color%}] > '   # custom prompt'
-
 PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
-
 
 # personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
@@ -117,7 +63,7 @@ alias light='wal -R -l'                                                   # ligh
 alias dark='wal -R'                                                       # dark wallpaper change
 alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
 alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import /Users/Simeon/Desktop/ && mpc update'            # beet import music
+alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'            # beet import music
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
 
 # tool loaders
