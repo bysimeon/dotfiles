@@ -62,12 +62,12 @@ function luv() {                                                          # open
 alias walp='wal -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'       # wallpaper change
 alias light='wal -R -l'                                                   # light wallpaper change
 alias dark='wal -R'                                                       # dark wallpaper change
-alias tmuxa='tmux -CC attach'                                             # tmux attach but simpler
 alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'         # beet import music
+alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'         # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
-alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list bugs'     # todo list
+alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
+alias v='nvim'                                                           # open neovim like vim
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
