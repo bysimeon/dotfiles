@@ -9,15 +9,33 @@ Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
-Plug 'tpope/ragtag.vim'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
 Plug 'w0rp/ale'
+Plug 'justinmk/vim-sneak'
+Plug 'ajh17/vimcompletesme'
+Plug 'machakann/vim-sandwich'
 call plug#end()
 
-" keybindings
-let mapleader="\<SPACE>" " Change map leader to space.
+" KEYBINDINGS
+
+" change map leader to space
+let mapleader="\<SPACE>" 
+
+" remap semicolon to colon
 :nnoremap ; :
+
+" remap Q to macro
 :nnoremap Q @q
 
+" remap split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" use control + l to turn off highlighing
 if maparg('<C-L>', 'n') ==# ''
   nnoremap <silent> <C-L> :nohlsearch<C-R>=has('diff')?'<Bar>diffupdate':''<CR><CR><C-L> 
 endif
@@ -29,15 +47,27 @@ let g:lightline = {
       \ }
 
 " basic settings
-set showmatch            " Show matching brackets.
-set number               " Show the line numbers on the left side.
-set formatoptions+=o     " Continue comment marker in new lines.
-set expandtab            " Insert spaces when TAB is pressed.
-set tabstop=4            " Render TABs using this many spaces.
-set shiftwidth=4         " Indentation amount for < and > commands.
-set noshowmode           " hides the insert text at the bottom
-set updatetime=100       " faster update time for nvim
-set autoindent           " auto indent
+set showmatch             " Show matching brackets.
+set number                " Show the line numbers on the left side.
+set formatoptions+=o      " Continue comment marker in new lines.
+set expandtab             " Insert spaces when TAB is pressed.
+set tabstop=4             " Render TABs using this many spaces.
+set shiftwidth=4          " Indentation amount for < and > commands.
+set noshowmode            " hides the insert text at the bottom
+set updatetime=100        " faster update time for nvim
+set autoindent            " auto indent
+set autoread              " auto read files
+set clipboard=unnamedplus " clipcoard shared with system
+filetype plugin on
+
+" html settings
+autocmd FileType html setlocal shiftwidth=2 tabstop=2
+" css settings
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
+" scss settings
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+" javascript settings
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " relative numbering
 function! NumberToggle()

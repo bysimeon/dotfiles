@@ -19,7 +19,7 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+#ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -42,7 +42,7 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git 
+  #git 
   #zsh-autosuggestions
 )
 
@@ -59,19 +59,20 @@ function luv() {                                                          # open
     macfeh $pic_path;
 }
 
-alias walp='wal -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'       # wallpaper change
-alias light='wal -R -l'                                                   # light wallpaper change
-alias dark='wal -R'                                                       # dark wallpaper change
-alias msc='mpd & ncmpcpp'                                                 # music and scrobbling
-alias beeti='beet import -A /Users/Simeon/Desktop/ && mpc update'         # beet import music from desktop
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'       # dotfiles git folder
+alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
+alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
+alias msc='mpd & ncmpcpp'                                                                     # music and scrobbling
+alias beeti='loadpyenv && pyenv shell 3.6.5 && beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
-alias v='nvim'                                                           # open neovim like vim
+alias v='nvim'                                                                                # open neovim like vim
+alias warriorjs='warriorjs --time .05'                                                        # faster warriorjs
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
 alias loadenv='export WORKON_HOME=$HOME/.virtualenvs && export PROJECT_HOME=$HOME/Devel && source /usr/local/bin/virtualenvwrapper.sh'
+alias loadpyenv='eval "$(pyenv init -)"'
 
 # alias
 alias cp='cp -iv'                           # Preferred 'cp' implementation
