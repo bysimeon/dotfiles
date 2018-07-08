@@ -3,6 +3,7 @@
 # If you come from bash you might have to change your $PATH.
 PATH=/usr/bin:/usr/sbin:/bin:/sbin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH=$PATH:/usr/local/git/bin:/usr/local/bin
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH=$PATH:~/.nexustools
@@ -43,14 +44,17 @@ DISABLE_AUTO_TITLE="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   #git 
-  #zsh-autosuggestions
+  zsh-autosuggestions
+  vi-mode
+  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
 
 # graphical customizaion
-PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
-# ($(t | wc -l | sed -e"s/ *//"))
+# PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
+# PROMPT='[$(t | wc -l | sed -e"s/ *//")] in %~% -> '
+PROMPT='%~ -> '
 
 # personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
@@ -61,13 +65,17 @@ function luv() {                                                          # open
 
 alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
 alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
-alias msc='mpd & ncmpcpp'                                                                     # music and scrobbling
+alias msc='ncmpcpp'                                                                           # music and scrobbling
 alias beeti='loadpyenv && pyenv shell 3.6.5 && beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
+alias discord='loadpyenv && pyenv shell 3.6.5 && cd ~/Developer/Discline/ && python Discline.py && cd'      # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
 alias v='nvim'                                                                                # open neovim like vim
-alias warriorjs='warriorjs --time .05'                                                        # faster warriorjs
+alias warrp='warriorjs --time .05'                                                            # faster warriorjs
+alias warre='v ~/WarriorJS/luv-beginner/Player.js'                                            # edit warrior.js
+alias budget='v ~/Google\ Drive/Temporary/Budget.md'                                          # open my budget
+alias projects='cd ~/Documents/Projects'                                                      # open project folder
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
@@ -80,7 +88,7 @@ alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
 alias ll='ls -FGlAhp'                       # Preferred 'ls' implementation
 alias less='less -FSRXc'                    # Preferred 'less' implementation
-# cd() { builtin cd "$@"; ll; }               # Always list directory contents upon 'cd'
+cd() { builtin cd "$@"; ls; }               # Always list directory contents upon 'cd'
 alias cd..='cd ../'                         # Go back 1 directory level (for fast typers)
 alias ..='cd ../'                           # Go back 1 directory level
 alias ...='cd ../../'                       # Go back 2 directory levels
