@@ -1,3 +1,5 @@
+# zmodload zsh/zprof # test speed of shell
+
 (cat ~/.cache/wal/sequences &)                # pywal colortheme on load
 
 # If you come from bash you might have to change your $PATH.
@@ -67,7 +69,6 @@ alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'            
 alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
 alias msc='ncmpcpp'                                                                           # music and scrobbling
 alias beeti='loadpyenv && pyenv shell 3.6.5 && beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
-alias discord='loadpyenv && pyenv shell 3.6.5 && cd ~/Developer/Discline/ && python Discline.py && cd'      # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
@@ -125,3 +126,5 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# zprof # test speed of shell
