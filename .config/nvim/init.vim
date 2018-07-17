@@ -8,15 +8,20 @@ Plug 'itchyny/lightline.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-commentary'
+Plug 'vimwiki/vimwiki'
+Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'justinmk/vim-sneak'
-Plug 'ajh17/vimcompletesme'
-Plug 'machakann/vim-sandwich'
+Plug 'scrooloose/nerdtree'
+
+" Plug 'justinmk/vim-sneak'
+" Plug 'machakann/vim-sandwich'
+" Plug 'tpope/vim-surround'
+" Plug 'tpope/vim-ragtag'
+" Plug 'tpope/vim-abolish'
+" Plug 'tpope/vim-commentary'
+" Plug 'sheerun/vim-polyglot'
+" Plug 'ncm2/ncm2'
+" Plug 'roxma/nvim-yarp'
 call plug#end()
 
 " KEYBINDINGS
@@ -35,6 +40,13 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" switch tabs with ctrl left and right
+nnoremap <C-right> :tabnext<CR>
+nnoremap <C-left> :tabprevious<CR>
+" and whilst in insert mode
+inoremap <C-right> <Esc>:tabnext<CR>
+inoremap <C-left> <Esc>:tabprevious<CR>
 
 " use control + l to turn off highlighing
 if maparg('<C-L>', 'n') ==# ''
@@ -103,3 +115,8 @@ map <C-n> :NERDTreeToggle<CR>
 " close nerdtree if it's the only thing left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" enable ncm2 for all buffer
+" autocmd BufEnter * call ncm2#enable_for_buffer()
+
+" note that must keep noinsert in completeopt, the others is optional
+" set completeopt=noinsert,menuone,noselect

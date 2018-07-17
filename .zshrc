@@ -1,16 +1,14 @@
-# zmodload zsh/zprof # test speed of shell
-
 (cat ~/.cache/wal/sequences &)                # pywal colortheme on load
 
 # If you come from bash you might have to change your $PATH.
-PATH=/usr/bin:/usr/sbin:/bin:/sbin
+export PATH=/usr/bin:/usr/sbin:/bin:/sbin
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH=$PATH:/usr/local/git/bin:/usr/local/bin
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH=$PATH:~/.nexustools
 
-# Path to your oh-my-zsh installation.
+# ZSH PATH
 export ZSH=/Users/Simeon/.oh-my-zsh
 
 ZSH_THEME="HUH"
@@ -22,7 +20,7 @@ DISABLE_LS_COLORS="true"
 DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-#ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -48,7 +46,6 @@ plugins=(
   #git 
   zsh-autosuggestions
   vi-mode
-  vscode
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -77,6 +74,7 @@ alias warrp='warriorjs --time .05'                                              
 alias warre='v ~/WarriorJS/luv-beginner/Player.js'                                            # edit warrior.js
 alias budget='v ~/Google\ Drive/Temporary/Budget.md'                                          # open my budget
 alias projects='cd ~/Documents/Projects'                                                      # open project folder
+alias storymap=' cd ~/Documents/Projects/StoryMapJS/'                                         # open storymapjs folder
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
@@ -126,5 +124,3 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-
-# zprof # test speed of shell
