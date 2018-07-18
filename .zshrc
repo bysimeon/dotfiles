@@ -11,7 +11,8 @@ export PATH=$PATH:~/.nexustools
 # ZSH PATH
 export ZSH=/Users/Simeon/.oh-my-zsh
 
-ZSH_THEME="HUH"
+# ZSH_THEME="HUH"
+ZSH_THEME="common"
 
 # Uncomment the following line to disable colors in ls.
 DISABLE_LS_COLORS="true"
@@ -53,7 +54,7 @@ source $ZSH/oh-my-zsh.sh
 # graphical customizaion
 # PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
 # PROMPT='[$(t | wc -l | sed -e"s/ *//")] in %~% -> '
-PROMPT='%~ -> '
+# PROMPT='%~ -> '
 
 # personal
 function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer

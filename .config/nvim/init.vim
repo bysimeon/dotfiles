@@ -1,4 +1,10 @@
-" a neovim configuration bysimeon
+"   ██╗███╗   ██╗██╗████████╗██╗   ██╗██╗███╗   ███╗
+"   ██║████╗  ██║██║╚══██╔══╝██║   ██║██║████╗ ████║
+"   ██║██╔██╗ ██║██║   ██║   ██║   ██║██║██╔████╔██║
+"   ██║██║╚██╗██║██║   ██║   ╚██╗ ██╔╝██║██║╚██╔╝██║
+"   ██║██║ ╚████║██║   ██║██╗ ╚████╔╝ ██║██║ ╚═╝ ██║
+"   ╚═╝╚═╝  ╚═══╝╚═╝   ╚═╝╚═╝  ╚═══╝  ╚═╝╚═╝     ╚═╝
+"          a neovim configuration bysimeon
 
 " plugins w/ vim-plug
 call plug#begin('~/.config/nvim/plugged')
@@ -74,13 +80,13 @@ set clipboard=unnamedplus " clipcoard shared with system
 filetype plugin on
 
 " html settings
-autocmd FileType html setlocal shiftwidth=2 tabstop=2
+" autocmd FileType html setlocal shiftwidth=2 tabstop=2
 " css settings
-autocmd FileType css setlocal shiftwidth=2 tabstop=2
+" autocmd FileType css setlocal shiftwidth=2 tabstop=2
 " scss settings
-autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+" autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 " javascript settings
-autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+" autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " relative numbering
 function! NumberToggle()
@@ -95,6 +101,10 @@ endfunc
 " toggle between normal and relative numbering.
 nnoremap <leader>r :call NumberToggle()<cr>
 
+" italic comments
+let &t_ZH="\e[3m"   
+let &t_ZR="\e[23m"
+highlight Comment cterm=italic, gui=italic
 
 "" PLUGIN CUSTOMIZATION ""
 
