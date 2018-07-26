@@ -65,6 +65,8 @@ function luv() {                                                          # open
 
 alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
 alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
+alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872328570.jpg'
+alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872328570.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
 alias beeti='loadpyenv && pyenv shell 3.6.5 && beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
@@ -125,3 +127,5 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+t

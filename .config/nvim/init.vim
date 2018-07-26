@@ -14,7 +14,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'mattn/emmet-vim'
-Plug 'vimwiki/vimwiki'
+" Plug 'vimwiki/vimwiki'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
@@ -61,22 +61,20 @@ endif
 
 " appearence
 colorscheme wal          " colorscheme for nvim and lighline
-let g:lightline = {   
-      \ 'colorscheme': 'wal',
-      \ }
 
 " basic settings
 set showmatch             " Show matching brackets.
 set number                " Show the line numbers on the left side.
 set formatoptions+=o      " Continue comment marker in new lines.
 set expandtab             " Insert spaces when TAB is pressed.
-set tabstop=4             " Render TABs using this many spaces.
-set shiftwidth=4          " Indentation amount for < and > commands.
+" set tabstop=4             " Render TABs using this many spaces.
+" set shiftwidth=4          " Indentation amount for < and > commands.
 set noshowmode            " hides the insert text at the bottom
 set updatetime=100        " faster update time for nvim
 set autoindent            " auto indent
 set autoread              " auto read files
 set clipboard=unnamedplus " clipcoard shared with system
+syntax on                 " syntax highlighting
 filetype plugin on
 
 " html settings
@@ -108,9 +106,31 @@ highlight Comment cterm=italic, gui=italic
 
 "" PLUGIN CUSTOMIZATION ""
 
+" lightline overwrite plugin name & uae wal colorscheme
+let g:lightline = {
+      \ 'colorscheme': 'wal',
+      \ 'component_function': {
+      \   'mode': 'LightlineMode'
+      \ },
+      \ }
+
+function! LightlineMode()
+  return expand('%:t') ==# '__Tagbar__' ? 'Tagbar':
+        \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+        \ &filetype ==# 'unite' ? 'Unite' :
+        \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+        \ &filetype ==# 'vimshell' ? 'VimShell' :
+        \ &filetype ==# 'nerdtree' ? 'NERD' :
+        \ &filetype ==# 'NERD_tree_1' ? 'NERD' :
+        \ lightline#mode()
+endfunction
+
 " emmet for html & css only
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" emmet change trigger key
+let g:user_emmet_leader_key='<C-M>'
 
 " start nerdtree when nvim opened without file
 autocmd StdinReadPre * let s:std_in=1
