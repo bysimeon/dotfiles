@@ -13,16 +13,15 @@ Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'dylanaraps/wal.vim'
 Plug 'airblade/vim-gitgutter'
-Plug 'mattn/emmet-vim'
-" Plug 'vimwiki/vimwiki'
-Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
-
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'tpope/vim-ragtag'
+" Plug 'mattn/emmet-vim'
+" Plug 'vimwiki/vimwiki'
 " Plug 'justinmk/vim-sneak'
 " Plug 'machakann/vim-sandwich'
 " Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-ragtag'
 " Plug 'tpope/vim-abolish'
 " Plug 'tpope/vim-commentary'
 " Plug 'sheerun/vim-polyglot'
@@ -67,8 +66,8 @@ set showmatch             " Show matching brackets.
 set number                " Show the line numbers on the left side.
 set formatoptions+=o      " Continue comment marker in new lines.
 set expandtab             " Insert spaces when TAB is pressed.
-" set tabstop=4             " Render TABs using this many spaces.
-" set shiftwidth=4          " Indentation amount for < and > commands.
+set tabstop=4             " Render TABs using this many spaces.
+set shiftwidth=4          " Indentation amount for < and > commands.
 set noshowmode            " hides the insert text at the bottom
 set updatetime=100        " faster update time for nvim
 set autoindent            " auto indent
@@ -78,13 +77,13 @@ syntax on                 " syntax highlighting
 filetype plugin on
 
 " html settings
-" autocmd FileType html setlocal shiftwidth=2 tabstop=2
+autocmd FileType html setlocal shiftwidth=4 tabstop=4
 " css settings
-" autocmd FileType css setlocal shiftwidth=2 tabstop=2
+autocmd FileType css setlocal shiftwidth=2 tabstop=2
 " scss settings
-" autocmd FileType scss setlocal shiftwidth=2 tabstop=2
+autocmd FileType scss setlocal shiftwidth=2 tabstop=2
 " javascript settings
-" autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 
 " relative numbering
 function! NumberToggle()
@@ -125,12 +124,15 @@ function! LightlineMode()
         \ lightline#mode()
 endfunction
 
+" deoplete on startup
+let g:deoplete#enable_at_startup = 1
+
 " emmet for html & css only
-let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+" let g:user_emmet_install_global = 0
+" autocmd FileType html,css EmmetInstall
 
 " emmet change trigger key
-let g:user_emmet_leader_key='<C-M>'
+" let g:user_emmet_leader_key='<C-M>'
 
 " start nerdtree when nvim opened without file
 autocmd StdinReadPre * let s:std_in=1
