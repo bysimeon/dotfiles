@@ -1,3 +1,15 @@
+# deal with floating windows! (this is a bash workaround)
+cmd + shift - left	: ~/.config/scripts/chunk_float.sh move -x
+cmd + shift - right	: ~/.config/scripts/chunk_float.sh move +x
+cmd + shift - up	: ~/.config/scripts/chunk_float.sh move -y
+cmd + shift - down	: ~/.config/scripts/chunk_float.sh move +y
+
+# increase region size (floating or nonfloating)
+lalt - h : ~/.config/scripts/chunk_resize_mgr.sh --increase west
+
+# decrease region size (floating or nonfloating)
+lalt + shift - h : ~/.config/scripts/chunk_resize_mgr.sh --decrease west
+
 # enter fullscreen mode for the focused container
 alt - f : chunkc tiling::window --toggle fullscreen
 
@@ -7,6 +19,7 @@ shift + alt - space : chunkc tiling::window --toggle float
 # change layout of desktop
 alt - e : chunkc tiling::desktop --layout bsp
 alt - s : chunkc tiling::desktop --layout monocle
+alt - m : chunkc tiling::desktop --layout float
 
 # close focused window
 alt - w : chunkc tiling::window --close
