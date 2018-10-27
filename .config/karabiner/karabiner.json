@@ -49,7 +49,13 @@
                         "description": "Press Right Shift Twice for Caps Lock",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "right_shift pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -63,16 +69,9 @@
                                         "key_code": "caps_lock"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "right_shift pressed",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "right_shift",
                                     "modifiers": {
@@ -93,14 +92,6 @@
                                     }
                                 ],
                                 "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "right_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
                                     "to_if_canceled": [
                                         {
                                             "set_variable": {
@@ -108,8 +99,17 @@
                                                 "value": 0
                                             }
                                         }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "right_shift pressed",
+                                                "value": 0
+                                            }
+                                        }
                                     ]
-                                }
+                                },
+                                "type": "basic"
                             }
                         ]
                     },
@@ -117,7 +117,13 @@
                         "description": "Press Left Shift Twice for Caps Lock",
                         "manipulators": [
                             {
-                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "name": "left_shift pressed",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": {
@@ -131,16 +137,9 @@
                                         "key_code": "caps_lock"
                                     }
                                 ],
-                                "conditions": [
-                                    {
-                                        "type": "variable_if",
-                                        "name": "left_shift pressed",
-                                        "value": 1
-                                    }
-                                ]
+                                "type": "basic"
                             },
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "left_shift",
                                     "modifiers": {
@@ -161,14 +160,6 @@
                                     }
                                 ],
                                 "to_delayed_action": {
-                                    "to_if_invoked": [
-                                        {
-                                            "set_variable": {
-                                                "name": "left_shift pressed",
-                                                "value": 0
-                                            }
-                                        }
-                                    ],
                                     "to_if_canceled": [
                                         {
                                             "set_variable": {
@@ -176,14 +167,37 @@
                                                 "value": 0
                                             }
                                         }
+                                    ],
+                                    "to_if_invoked": [
+                                        {
+                                            "set_variable": {
+                                                "name": "left_shift pressed",
+                                                "value": 0
+                                            }
+                                        }
                                     ]
-                                }
+                                },
+                                "type": "basic"
                             }
                         ]
                     }
                 ]
             },
-            "devices": [],
+            "devices": [
+                {
+                    "disable_built_in_keyboard_if_exists": false,
+                    "fn_function_keys": [],
+                    "identifiers": {
+                        "is_keyboard": true,
+                        "is_pointing_device": false,
+                        "product_id": 632,
+                        "vendor_id": 1452
+                    },
+                    "ignore": false,
+                    "manipulate_caps_lock_led": true,
+                    "simple_modifications": []
+                }
+            ],
             "fn_function_keys": [
                 {
                     "from": {

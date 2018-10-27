@@ -63,10 +63,10 @@ function luv() {                                                          # open
     macfeh $pic_path;
 }
 
-alias wd='wal -n -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
-alias wl='wal -n -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
-alias wfd='wal -n -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
-alias wfl='wal -n -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
+alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
+alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
+alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
+alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
 alias bti='beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
