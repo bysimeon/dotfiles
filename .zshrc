@@ -68,7 +68,7 @@ alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'        
 alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
-alias bti='beet import -A /Users/Simeon/Desktop/ && mpc update'                             # beet import music from desktop
+alias bti='beet import -A /Users/Simeon/Desktop/ && mpc update'                               # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
