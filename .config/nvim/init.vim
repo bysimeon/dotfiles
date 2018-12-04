@@ -17,6 +17,7 @@ Plug 'w0rp/ale'
 Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-ragtag'
+Plug 'junegunn/goyo.vim'
 " Plug 'mattn/emmet-vim'
 " Plug 'vimwiki/vimwiki'
 " Plug 'justinmk/vim-sneak'
@@ -62,6 +63,7 @@ endif
 colorscheme wal          " colorscheme for nvim and lighline
 
 " basic settings
+set number relativenumber " Use relative numberlines
 set showmatch             " Show matching brackets.
 set number                " Show the line numbers on the left side.
 set formatoptions+=o      " Continue comment marker in new lines.
@@ -72,7 +74,7 @@ set noshowmode            " hides the insert text at the bottom
 set updatetime=100        " faster update time for nvim
 set autoindent            " auto indent
 set autoread              " auto read files
-set clipboard=unnamedplus " clipcoard shared with system
+set clipboard=unnamedplus " clipboard shared with system
 syntax on                 " syntax highlighting
 filetype plugin on
 

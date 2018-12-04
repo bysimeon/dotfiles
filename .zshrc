@@ -68,7 +68,7 @@ alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'        
 alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
-alias bti='beet import -A /Users/Simeon/Desktop/ && mpc update'                               # beet import music from desktop
+alias import='beet import /Users/Simeon/Desktop/'                                             # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
@@ -79,6 +79,7 @@ alias budget='v ~/Google\ Drive/Temporary/Budget.md'                            
 alias projects='cd ~/Documents/Projects'                                                      # open project folder
 alias storymap=' cd ~/Documents/Projects/StoryMapJS/'                                         # open storymapjs folder
 alias fitbit=' cd ~/documents/fit && virtualenv fitbit && source fitbitenv/bin/activate && python app.py' # run fitbit to google fit
+alias lg='lazygit'                                                                            # open lazygit
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
