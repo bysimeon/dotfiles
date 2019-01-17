@@ -23,11 +23,11 @@ chunkc core::unload border.so
 
 chunkc set global_desktop_mode           float
 
-chunkc set global_desktop_offset_bottom  75
-chunkc set global_desktop_offset_top     75
-chunkc set global_desktop_offset_left    75
-chunkc set global_desktop_offset_right   75
-chunkc set global_desktop_offset_gap     75
+chunkc set global_desktop_offset_bottom  50
+chunkc set global_desktop_offset_top     50
+chunkc set global_desktop_offset_left    50
+chunkc set global_desktop_offset_right   50
+chunkc set global_desktop_offset_gap     50
 
 chunkc set desktop_padding_step_size     0.0
 chunkc set desktop_gap_step_size         5.0
@@ -72,13 +72,17 @@ chunkc core::load tiling.so
 # chunkc core::load border.so
 # chunkc core::load ffm.so
 
-chunkc tiling::rule --owner \"System Preferences\" --subrole AXStandardWindow --state float
-chunkc tiling::rule --owner \"iTerm2\" --subrole AXStandardWindow --state tile
-chunkc tiling::rule --owner \"Safari\" --subrole AXStandardWindow --state tile
-chunkc tiling::rule --owner \"Chrome\" --subrole AXStandardWindow --state tile
-chunkc tiling::rule --owner \"Finder\" --name Empty Trash --state float
-chunkc tiling::rule --owner \"Finder\" --name Copy --state float
-chunkc tiling::rule --owner \"Archive Utility\" --state float
-chunkc tiling::rule --owner \"The Unarchiver\" --state float
-chunkc tiling::rule --owner \"Time Machine\" --state float
-chunkc tiling::rule --owner \"Transmission\" --state float
+chunkc tiling::rule --owner \"System Preferences\" --subrole AXStandardWindow --state float &
+chunkc tiling::rule --owner \"System Preferences\" --subrole AXStandardWindow --state float &
+chunkc tiling::rule --owner \"iTerm2\" --subrole AXStandardWindow --state tile &
+chunkc tiling::rule --owner \"Safari\" --subrole AXStandardWindow --state tile &
+chunkc tiling::rule --owner \"Chrome\" --subrole AXStandardWindow --state tile &
+chunkc tiling::rule --owner \"Chrome\" --subrole kAXDialogSubrole --state float &
+chunkc tiling::rule --owner \"Finder\" --name Empty Trash --state float &
+chunkc tiling::rule --owner \"Finder\" --name Copy --state float &
+chunkc tiling::rule --owner \"Archive Utility\" --state float &
+chunkc tiling::rule --owner \"The Unarchiver\" --state float &
+chunkc tiling::rule --owner \"Time Machine\" --state float &
+chunkc tiling::rule --owner \"Transmission\" --state float &
+chunkc tiling::rule --owner \"Chrome\" --name <unknown> --state float &
+chunkc tiling::rule --owner \"Chrome\" --name (invalid) --state float &

@@ -18,7 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'tpope/vim-ragtag'
 Plug 'junegunn/goyo.vim'
-" Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim'
 " Plug 'vimwiki/vimwiki'
 " Plug 'justinmk/vim-sneak'
 " Plug 'machakann/vim-sandwich'
@@ -28,7 +28,13 @@ Plug 'junegunn/goyo.vim'
 " Plug 'sheerun/vim-polyglot'
 " Plug 'ncm2/ncm2'
 " Plug 'roxma/nvim-yarp'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'skywind3000/asyncrun.vim'
 call plug#end()
+
+" APPEARANCE
+
 
 " KEYBINDINGS
 
@@ -105,6 +111,9 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 highlight Comment cterm=italic, gui=italic
 
+" map <esc> to exit terminal-mode
+:tnoremap <Esc> <C-\><C-n><Paste>
+
 "" PLUGIN CUSTOMIZATION ""
 
 " lightline overwrite plugin name & uae wal colorscheme
@@ -129,12 +138,36 @@ endfunction
 " deoplete on startup
 let g:deoplete#enable_at_startup = 1
 
+" deoplete tab through options
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" ale settings
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+
+" run prettier when file is saved
+autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
+"
 " emmet for html & css only
-" let g:user_emmet_install_global = 0
+let g:user_emmet_install_global = 0
 " autocmd FileType html,css EmmetInstall
 
 " emmet change trigger key
-" let g:user_emmet_leader_key='<C-M>'
+let g:user_emmet_leader_key='<C-M>'
+
+" emmet settings
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
+" vim-javascript enable flow
+let g:javascript_plugin_flow = 1
+
+" vim-jsx remove .jsx extension requirment
+let g:jsx_ext_required = 0
 
 " start nerdtree when nvim opened without file
 autocmd StdinReadPre * let s:std_in=1

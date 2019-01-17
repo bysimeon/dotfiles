@@ -7,6 +7,8 @@ export PATH="${PATH}:${HOME}/.local/bin/"
 export PATH=$PATH:/usr/local/git/bin:/usr/local/bin
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH=$PATH:~/.nexustools
+export PATH="$HOME/.node/bin:$HOME/.rbenv/shims:$PATH"
+export PATH=/usr/local/opt/ruby/bin:$PATH
 
 # ZSH PATH
 export ZSH=/Users/Simeon/.oh-my-zsh
@@ -68,7 +70,7 @@ alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'        
 alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
-alias import='beet import /Users/Simeon/Desktop/'                                             # beet import music from desktop
+alias import='beet import -A /Users/Simeon/Desktop/ && open ~/Music/Library/ -a Itunes'       # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
@@ -80,11 +82,18 @@ alias projects='cd ~/Documents/Projects'                                        
 alias storymap=' cd ~/Documents/Projects/StoryMapJS/'                                         # open storymapjs folder
 alias fitbit=' cd ~/documents/fit && virtualenv fitbit && source fitbitenv/bin/activate && python app.py' # run fitbit to google fit
 alias lg='lazygit'                                                                            # open lazygit
+alias vconf="v ~/.config/nvim/init.vim"                                                       # neovim config
+alias zconf="v ~/.zshrc"                                                                      # zsh config
+alias sconf="v ~/.skhdrc"                                                                     # skhd config
+alias cconf="v ~/.chunkwmrc"                                                                  # chunkwm config
+alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"
+alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
 alias loadenv='export WORKON_HOME=$HOME/.virtualenvs && export PROJECT_HOME=$HOME/Devel && source /usr/local/bin/virtualenvwrapper.sh'
 alias loadpyenv='eval "$(pyenv init -)"'
+alias loadrbenv='eval "$(rbenv init -)"'
 
 # alias
 alias cp='cp -iv'                           # Preferred 'cp' implementation
@@ -131,3 +140,6 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 t
+
+# zsh-bd
+. $HOME/.zsh/plugins/bd/bd.zsh
