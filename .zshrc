@@ -70,7 +70,7 @@ alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'        
 alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
 alias msc='ncmpcpp'                                                                           # music and scrobbling
-alias import='beet import -A /Users/Simeon/Desktop/ && open ~/Music/Library/ -a Itunes'       # beet import music from desktop
+alias import='beet import -A /Users/Simeon/Desktop'                                           # beet import music from desktop
 alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
 alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
 alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
@@ -86,16 +86,18 @@ alias vconf="v ~/.config/nvim/init.vim"                                         
 alias zconf="v ~/.zshrc"                                                                      # zsh config
 alias sconf="v ~/.skhdrc"                                                                     # skhd config
 alias cconf="v ~/.chunkwmrc"                                                                  # chunkwm config
-alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"
-alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"
+alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"                                      # open jekyll [gem]
+alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"                                      # open bundle [gem]
+alias srvr="ssh simeon@198.199.73.214"                                                        # ssh to droplet
+alias pipu="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" # upgrade pip packages
+alias dp="cd ~/documents/"
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
 alias loadenv='export WORKON_HOME=$HOME/.virtualenvs && export PROJECT_HOME=$HOME/Devel && source /usr/local/bin/virtualenvwrapper.sh'
 alias loadpyenv='eval "$(pyenv init -)"'
 alias loadrbenv='eval "$(rbenv init -)"'
-
-# alias
+alias activity='/Applications/Activity\ Watch/aw-qt'        # alias
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation

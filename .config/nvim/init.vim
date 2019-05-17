@@ -31,6 +31,7 @@ Plug 'mattn/emmet-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'skywind3000/asyncrun.vim'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " APPEARANCE
@@ -146,6 +147,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
 let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let b:ale_fixers = ['prettier', 'eslint'] " fix files with prettier, and then eslint
+let g:ale_sign_column_always = 1 " keep the sign gutter open at all times 
 
 " run prettier when file is saved
 autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
