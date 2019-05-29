@@ -91,6 +91,7 @@ alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"                        
 alias srvr="ssh simeon@198.199.73.214"                                                        # ssh to droplet
 alias pipu="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" # upgrade pip packages
 alias dp="cd ~/documents/"
+alias note="cd ~/Documents/notebook"                                                          # cd to notebook
 
 # tool loaders
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'

@@ -1,6 +1,13 @@
 # open terminal
 alt - return : open "/Applications/Command.app"
 
+# open IINA with url from clipboard
+alt - i : open -na /Applications/IINA.app $(pbpaste)
+
+# change layout of desktop
+ctrl + alt - s : yabai -m space --layout bsp
+ctrl + alt - d : yabai -m space --layout float
+
 # focus window
 alt - h : yabai -m window --focus west
 alt - j : yabai -m window --focus south
@@ -148,7 +155,3 @@ alt - s : yabai -m window --toggle sticky
 # toggle sticky, float and resize to picture-in-picture size
 alt - p : yabai -m window --toggle sticky;\
           yabai -m window --grid 5:5:4:0:1:1
-
-# change layout of desktop
-ctrl + alt - a : yabai -m space --layout bsp
-ctrl + alt - d : yabai -m space --layout float
