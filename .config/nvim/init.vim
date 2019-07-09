@@ -31,6 +31,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'Yggdroot/indentLine'
+Plug 'nerdypepper/agila.vim'
 Plug 'neoclide/coc.nvim', {'do': './install.sh'}
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -91,7 +92,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " appearence
-colorscheme wal          " colorscheme for nvim and lighline
+colorscheme agila          " colorscheme for nvim and lighline
 
 " basic settings
 set number relativenumber " Use relative numberlines

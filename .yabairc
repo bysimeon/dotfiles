@@ -25,4 +25,19 @@ yabai -m config window_gap                   50
 
 yabai -m config --space 1 layout             float
 
-echo "yabai configuration loaded.."
+# rules
+
+yabai -m rule --add app="iTunes" title="MiniPlayer" manage=off
+yabai -m rule --add app="^System Preferences$" manage=off
+
+yabai -m rule --add app="iTunes" space=^1
+yabai -m rule --add app="iTunes" space=^1
+yabai -m rule --add app="Transmission" space=^1
+
+yabai -m rule --add app="Lightroom Classic" space=^3
+yabai -m rule --add app="Photoshop CC" space=^3
+yabai -m rule --add app="Illustrator CC" space=^3
+yabai -m rule --add app="InDesign CC" space=^3
+yabai -m rule --add app="Capture One 12" space=^3
+
+

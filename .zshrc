@@ -86,6 +86,7 @@ alias vconf="v ~/.config/nvim/init.vim"                                         
 alias zconf="v ~/.zshrc"                                                                      # zsh config
 alias sconf="v ~/.skhdrc"                                                                     # skhd config
 alias cconf="v ~/.chunkwmrc"                                                                  # chunkwm config
+alias yconf="v ~/.yabairc"                                                                    # yabai config
 alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"                                      # open jekyll [gem]
 alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"                                      # open bundle [gem]
 alias srvr="ssh simeon@198.199.73.214"                                                        # ssh to droplet
