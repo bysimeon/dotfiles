@@ -49,6 +49,18 @@ cmd + alt - n : yabai -m space --create;\
                 id=$(yabai -m query --spaces --monitor);\
                 yabai -m space --focus $(echo ${id##* })
 
+# wiggle window
+ctrl + alt + cmd - x : yabai -m window --resize top_right:-1:-1 && \
+                       yabai -m window --resize top_right:1:1 && \
+                       yabai -m window --resize bottom_left:-1:-1 && \
+                       yabai -m window --resize bottom_left:1:1
+
+# cycle through all windows sorted by: coordinates -> space index -> display index
+# yabai -m window --focus "$(yabai -m query --windows | jq -re "sort_by(.display, .space, .frame.x, .frame.y, .id) | map(select(.subrole != \"AXUnknown\")) | reverse | nth(index(map(select(.focused == 1))) - 1).id")"
+
+# cycle through all visible windows sorted by: coordinates -> display index
+# yabai -m window --focus "$(yabai -m query --windows | jq -re "sort_by(.display, .frame.x, .frame.y, .id) | map(select(.visible == 1 and .subrole != \"AXUnknown\")) | reverse | nth(index(map(select(.focused == 1))) - 1).id")"
+
 # destroy desktop
 cmd + alt - w : yabai -m space --destroy
 
@@ -74,7 +86,7 @@ shift + cmd - c : yabai -m window --space next; yabai -m space --focus next
 shift + cmd - 1 : yabai -m window --space  1; yabai -m space --focus 1
 shift + cmd - 2 : yabai -m window --space  2; yabai -m space --focus 2
 shift + cmd - 3 : yabai -m window --space  3; yabai -m space --focus 3
-# shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
+shift + cmd - 4 : yabai -m window --space  4; yabai -m space --focus 4
 # shift + cmd - 5 : yabai -m window --space  5; yabai -m space --focus 5
 # shift + cmd - 6 : yabai -m window --space  6; yabai -m space --focus 6
 # shift + cmd - 7 : yabai -m window --space  7; yabai -m space --focus 7
@@ -134,7 +146,7 @@ alt - x : yabai -m space --mirror x-axis
 alt - a : yabai -m space --toggle padding; yabai -m space --toggle gap
 
 # toggle window fullscreen
-alt - f : yabai -m window --toggle fullscreen
+alt - f : yabai -m window --toggle zoom-fullscreen
 
 # toggle window native fullscreen
 shift + alt - f : yabai -m window --toggle native-fullscreen

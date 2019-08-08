@@ -16,12 +16,14 @@ yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
-yabai -m config layout                       float
+yabai -m config layout                       bsp
 yabai -m config top_padding                  50
 yabai -m config bottom_padding               50
 yabai -m config left_padding                 50
 yabai -m config right_padding                50
 yabai -m config window_gap                   50
+
+yabai -m config auto_balance                 off
 
 yabai -m config --space 1 layout             float
 
@@ -29,15 +31,15 @@ yabai -m config --space 1 layout             float
 
 yabai -m rule --add app="iTunes" title="MiniPlayer" manage=off
 yabai -m rule --add app="^System Preferences$" manage=off
+yabai -m rule --add app="MacPaw Hider 2" manage=off
 
 yabai -m rule --add app="iTunes" space=^1
-yabai -m rule --add app="iTunes" space=^1
-yabai -m rule --add app="Transmission" space=^1
+yabai -m rule --add app="Transmission" space=1
 
-yabai -m rule --add app="Lightroom Classic" space=^3
-yabai -m rule --add app="Photoshop CC" space=^3
-yabai -m rule --add app="Illustrator CC" space=^3
-yabai -m rule --add app="InDesign CC" space=^3
-yabai -m rule --add app="Capture One 12" space=^3
+yabai -m rule --add app="Lightroom Classic" space=^4
+yabai -m rule --add app="Photoshop CC" space=^4
+yabai -m rule --add app="Illustrator CC" space=^4
+yabai -m rule --add app="InDesign CC" space=^4
+yabai -m rule --add app="Capture One 12" space=^4
 
-
+# filters 
