@@ -90,6 +90,7 @@ alias yconf="v ~/.yabairc"                                                      
 alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"                                      # open jekyll [gem]
 alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"                                      # open bundle [gem]
 alias srvr="ssh simeon@198.199.73.214"                                                        # ssh to droplet
+alias srvr2="ssh simeon@134.209.112.183"                                                      # ssh to droplet
 alias pipu="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" # upgrade pip packages
 alias dp="cd ~/documents/"
 alias note="cd ~/Documents/notebook"                                                          # cd to notebook
