@@ -46,59 +46,23 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  #git 
   zsh-autosuggestions
   vi-mode
 )
 
 source $ZSH/oh-my-zsh.sh
 
-# graphical customizaion
-# PROMPT='[$fg[red]%~%{$reset_color%}] '   # custom prompt'
-# PROMPT='[$(t | wc -l | sed -e"s/ *//")] in %~% -> '
-# PROMPT='%~ -> '
-
-# personal
-function macfeh() { open -b 'drabweb.macfeh' "$@"; }                      # macfeh image viewer
-function luv() {                                                          # opens pic of <3 in machfeh
-    pic_path=$(find /Users/Simeon/Pictures/Teah -type f | gshuf -n 1);
-    macfeh $pic_path;
-}
-
-alias wd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers'                          # wallpaper change
-alias wl='wal -q -l -i  /Users/Simeon/Google\ Drive/Creative/Wallpapers'                      # light wallpaper change
-alias wfd='wal -q -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
-alias wfl='wal -q -l -i /Users/Simeon/Google\ Drive/Creative/Wallpapers/1872537270.jpg'
-alias msc='ncmpcpp'                                                                           # music and scrobbling
-alias import='beet import -A /Users/Simeon/Desktop'                                           # beet import music from desktop
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'                           # dotfiles git folder
-alias t='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir ~/Notes/Tasks --list tasks'    # todo list
-alias b='nocorrect python /usr/local/bin/sjl-t/t.py --task-dir $(pwd) --list bugs'            # bugs list
-alias v='nvim'                                                                                # open neovim like vim
-alias warrp='warriorjs --time .05'                                                            # faster warriorjs
-alias warre='v ~/WarriorJS/luv-beginner/Player.js'                                            # edit warrior.js
-alias budget='v ~/Google\ Drive/Temporary/Budget.md'                                          # open my budget
-alias projects='cd ~/Documents/Projects'                                                      # open project folder
-alias storymap=' cd ~/Documents/Projects/StoryMapJS/'                                         # open storymapjs folder
-alias fitbit=' cd ~/documents/fit && virtualenv fitbit && source fitbitenv/bin/activate && python app.py' # run fitbit to google fit
-alias lg='lazygit'                                                                            # open lazygit
-alias vconf="v ~/.config/nvim/init.vim"                                                       # neovim config
-alias zconf="v ~/.zshrc"                                                                      # zsh config
-alias sconf="v ~/.skhdrc"                                                                     # skhd config
-alias cconf="v ~/.chunkwmrc"                                                                  # chunkwm config
-alias yconf="v ~/.yabairc"                                                                    # yabai config
-alias jekyll="/usr/local/lib/ruby/gems/2.5.0/bin/jekyll"                                      # open jekyll [gem]
-alias bundle="/usr/local/lib/ruby/gems/2.5.0/bin/bundle"                                      # open bundle [gem]
-alias pipu="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U" # upgrade pip packages
-alias dp="cd ~/documents/"
-alias note="cd ~/Documents/notebook"                                                          # cd to notebook
+source ~/.personalalias # load personal aliases
 
 # tool loaders
+alias pipu="pip list --outdated --format=freeze | grep -v '^\-e' | cut -d = -f 1  | xargs -n1 pip install -U"
 alias loadnvm='export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" && [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"'
 alias loadenv='export WORKON_HOME=$HOME/.virtualenvs && export PROJECT_HOME=$HOME/Devel && source /usr/local/bin/virtualenvwrapper.sh'
 alias loadpyenv='eval "$(pyenv init -)"'
 alias loadrbenv='eval "$(rbenv init -)"'
-alias activity='/Applications/Activity\ Watch/aw-qt'        # alias
+alias activity='/Applications/Activity\ Watch/aw-qt'
+
+# movement
 alias cp='cp -iv'                           # Preferred 'cp' implementation
 alias mv='mv -iv'                           # Preferred 'mv' implementation
 alias mkdir='mkdir -pv'                     # Preferred 'mkdir' implementation
@@ -127,7 +91,6 @@ ql () { qlmanage -p "$*" >& /dev/null; }    # ql:           Opens any file in Ma
 alias DT='tee ~/Desktop/terminalOut.txt'    # DT:           Pipe content to file on MacOS Desktop
 
 # networking
-alias myip='curl ip.appspot.com'                    # myip:         Public facing IP Address
 alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
 alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
 alias lsock='sudo /usr/sbin/lsof -i -P'             # lsock:        Display open sockets
@@ -143,6 +106,3 @@ export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 
 t
-
-# zsh-bd
-. $HOME/.zsh/plugins/bd/bd.zsh
