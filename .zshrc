@@ -101,8 +101,9 @@ alias ipInfo1='ipconfig getpacket en1'              # ipInfo1:      Get info on 
 alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+# Setting fd as the default source for fzf
+export FZF_DEFAULT_COMMAND="fd --type f --exclude '.m4a'"
 
 t
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
