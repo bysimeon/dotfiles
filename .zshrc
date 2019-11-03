@@ -9,6 +9,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 export PATH=$PATH:~/.nexustools
 export PATH="$HOME/.node/bin:$HOME/.rbenv/shims:$PATH"
 export PATH=/usr/local/opt/ruby/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
 source $HOME/.cargo/env
 
 # ZSH PATH
@@ -47,7 +48,6 @@ ENABLE_CORRECTION="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  zsh-autosuggestions
   vi-mode
 )
 
