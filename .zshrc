@@ -105,6 +105,6 @@ alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rul
 # Setting fd as the default source for fzf
 export FZF_DEFAULT_COMMAND="fd --type f --exclude '.m4a'"
 
-t
+# t
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
