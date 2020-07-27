@@ -10,6 +10,8 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf' 
 Plug 'junegunn/fzf.vim'
+Plug 'camspiers/lens.vim'
+Plug 'camspiers/animate.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'dylanaraps/wal.vim'
@@ -24,14 +26,15 @@ Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'skywind3000/asyncrun.vim'
-Plug 'wakatime/vim-wakatime'
-Plug 'mhinz/vim-startify'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'Yggdroot/indentLine'
 Plug 'nerdypepper/agila.vim'
 Plug 'neoclide/coc.nvim', {'do': './install.sh'}
+
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -39,25 +42,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-" Plug 'scrooloose/nerdtree'
-" Plug 'mattn/emmet-vim'
-" Plug 'vimwiki/vimwiki'
-" Plug 'justinmk/vim-sneak'
-" Plug 'machakann/vim-sandwich'
-" Plug 'tpope/vim-surround'
-" Plug 'tpope/vim-abolish'
-" Plug 'tpope/vim-commentary'
-" Plug 'sheerun/vim-polyglot'
-" Plug 'ncm2/ncm2'
-" Plug 'roxma/nvim-yarp'
-" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 
 call plug#end()
-
-" APPEARANCE
-
-" vim-startify custom header
-let g:startify_custom_header =  ["..."]
 
 " indent characters
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
@@ -68,7 +54,7 @@ let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let mapleader="\<SPACE>" 
 
 " remap semicolon to colon
-:nnoremap ; :
+" :nnoremap ; :
 
 " remap Q to macro
 :nnoremap Q @q
@@ -257,17 +243,17 @@ call defx#custom#option('_', {
 	\ })
 
 " start nerdtree when nvim opened without file
-" autocmd StdinReadPre * let s:std_in=1
-" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " start nerdtree when nvim opens
 " autocmd vimenter * NERDTree
 
 " open nerdtree with ctrl + n
-" map <C-n> :NERDTreeToggle<CR>
+map <C-n> :NERDTreeToggle<CR>
 
 " close nerdtree if it's the only thing left
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " enable ncm2 for all buffer
 " autocmd BufEnter * call ncm2#enable_for_buffer()

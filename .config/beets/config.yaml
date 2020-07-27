@@ -1,7 +1,7 @@
 directory: ~/Music/Library
 library: ~/Developer/musiclibrary.db
 
-plugins: ftintitle mpdupdate smartplaylist random embedart
+plugins: ftintitle mpdupdate smartplaylist random embedart web lyrics
 
 embedart:
     auto: yes                              # Embed album art in the music files
@@ -12,3 +12,5 @@ import:
 mpdupdate:
     host: localhost
     port: 6600
+lyrics:
+    auto: yes
