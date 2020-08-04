@@ -12,7 +12,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 
 # ZSH PATH
-export ZSH=/Users/Simeon/.oh-my-zsh
+export ZSH=/Users/438672/.oh-my-zsh
 
 # ZSH_THEME="HUH"
 ZSH_THEME="common"
