@@ -33,6 +33,7 @@ Plug 'tpope/vim-markdown'
 Plug 'mengelbrecht/lightline-bufferline'
 Plug 'Yggdroot/indentLine'
 Plug 'nerdypepper/agila.vim'
+Plug 'wadackel/vim-dogrun'
 Plug 'neoclide/coc.nvim', {'do': './install.sh'}
 
 if has('nvim')
