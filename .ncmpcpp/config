@@ -19,7 +19,7 @@ mpd_port = 6600
 # visualizer_look = "∙▋"
 # visualizer_in_stereo = "yes"
 
-lyrics_fetchers = genius, lyricwiki, azlyrics, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
+# lyrics_fetchers = genius, lyricwiki, azlyrics, sing365, lyricsmania, metrolyrics, justsomelyrics, jahlyrics, plyrics, tekstowo, internet
 
 media_library_albums_split_by_date = no
 

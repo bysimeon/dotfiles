@@ -1,4 +1,4 @@
-(cat ~/.cache/wal/sequences &)                # pywal colortheme on load
+# (cat ~/.cache/wal/sequences &)                # pywal colortheme on load
 
 # If you come from bash you might have to change your $PATH.
 export PATH=/usr/bin:/usr/sbin:/bin:/sbin

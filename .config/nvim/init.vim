@@ -10,31 +10,32 @@
 call plug#begin('~/.config/nvim/plugged')
 Plug '/usr/local/opt/fzf' 
 Plug 'junegunn/fzf.vim'
-Plug 'camspiers/lens.vim'
-Plug 'camspiers/animate.vim'
+
 Plug 'itchyny/lightline.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'dylanaraps/wal.vim'
+Plug 'mengelbrecht/lightline-bufferline'
+
 Plug 'airblade/vim-gitgutter'
-Plug 'w0rp/ale'
 Plug 'tpope/vim-ragtag'
 Plug 'junegunn/goyo.vim'
 Plug 'sbdchd/neoformat'
+
+" syntax highlighing
 Plug 'chemzqm/vim-jsx-improve'
 Plug 'othree/html5.vim'
 Plug 'elzr/vim-json'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
-Plug 'skywind3000/asyncrun.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-markdown'
-Plug 'mengelbrecht/lightline-bufferline'
 Plug 'Yggdroot/indentLine'
-Plug 'nerdypepper/agila.vim'
+
+Plug 'skywind3000/asyncrun.vim'
+Plug 'tpope/vim-fugitive'
+
 Plug 'wadackel/vim-dogrun'
-Plug 'neoclide/coc.nvim', {'do': './install.sh'}
+
+Plug 'w0rp/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 if has('nvim')
   Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -44,6 +45,11 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
+" Plug 'scrooloose/nerdtree'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'camspiers/lens.vim'
+" Plug 'camspiers/animate.vim'
+" Plug 'dylanaraps/wal.vim'
 call plug#end()
 
 " indent characters
@@ -79,7 +85,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " appearence
-colorscheme agila          " colorscheme for nvim and lighline
+colorscheme dogrun " colorscheme for nvim and lighline
 
 " basic settings
 set number relativenumber " Use relative numberlines
@@ -88,12 +94,19 @@ set number                " Show the line numbers on the left side.
 set formatoptions+=o      " Continue comment marker in new lines.
 set expandtab             " Insert spaces when TAB is pressed.
 set tabstop=4             " Render TABs using this many spaces.
+set softtabstop=4         " Render TABs using this many spaces.
 set shiftwidth=4          " Indentation amount for < and > commands.
 set noshowmode            " hides the insert text at the bottom
 set updatetime=100        " faster update time for nvim
 set autoindent            " auto indent
+set smartindent           " smart indenting
 set autoread              " auto read files
 set clipboard=unnamedplus " clipboard shared with system
+set nohlsearch            " doesn't highlight on search
+set hidden                " files stay in buffer when closed
+set guicursor=            " block for cursor
+set scrolloff=15          " starts scrolling 15 lines from top or bottom
+set nowrap                " don't wrap text
 syntax on                 " syntax highlighting
 filetype plugin on
 
@@ -131,7 +144,7 @@ highlight Comment cterm=italic, gui=italic
 
 " lightline overwrite plugin name & use wal colorscheme
 let g:lightline = {
-      \ 'colorscheme': 'wal',
+      \ 'colorscheme': 'dogrun',
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
       \   'currentfunction': 'CocCurrentFunction',
@@ -244,17 +257,17 @@ call defx#custom#option('_', {
 	\ })
 
 " start nerdtree when nvim opened without file
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" autocmd StdinReadPre * let s:std_in=1
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " start nerdtree when nvim opens
 " autocmd vimenter * NERDTree
 
 " open nerdtree with ctrl + n
-map <C-n> :NERDTreeToggle<CR>
+" map <C-n> :NERDTreeToggle<CR>
 
 " close nerdtree if it's the only thing left
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " enable ncm2 for all buffer
 " autocmd BufEnter * call ncm2#enable_for_buffer()
