@@ -18,6 +18,7 @@ Plug 'mengelbrecht/lightline-bufferline'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-ragtag'
 Plug 'junegunn/goyo.vim'
+
 Plug 'sbdchd/neoformat'
 
 " syntax highlighing
@@ -33,6 +34,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'wadackel/vim-dogrun'
+Plug 'jaredgorski/spacecamp'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 Plug 'w0rp/ale'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -85,7 +88,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " appearence
-colorscheme dogrun " colorscheme for nvim and lighline
+colorscheme spacecamp " colorscheme for nvim and lighline
 
 " basic settings
 set number relativenumber " Use relative numberlines
@@ -144,7 +147,7 @@ highlight Comment cterm=italic, gui=italic
 
 " lightline overwrite plugin name & use wal colorscheme
 let g:lightline = {
-      \ 'colorscheme': 'dogrun',
+      \ 'colorscheme': 'gruvbox',
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
       \   'currentfunction': 'CocCurrentFunction',
