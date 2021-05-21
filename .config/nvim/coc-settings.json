@@ -38,12 +38,13 @@
     "prettier.tslintIntegration": true,
     "prettier.stylelintIntegration": true,
     //emmet
-    "emmet.includeLanguages": {"vue-html": "html", "javascript": "javascriptreact"},
+    "emmet.includeLanguages": {"vue-html": "html"},
     //python
     "python.autoComplete.addBrackets": true,
     // eslint
-    "eslint.filetypes": ["javascript", "javascript.jsx", "javascriptreact"],
+    "eslint.filetypes": ["javascript", "javascript.jsx"],
     "eslint.autoFix": true,
+    "eslint.run": "onType",
     "eslint.autoFixOnSave": true,
     //golang
     "languageserver": {
