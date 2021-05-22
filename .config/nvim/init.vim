@@ -34,6 +34,8 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'wadackel/vim-dogrun'
+Plug 'wojciechkepka/bogster'
+Plug 'cocopon/iceberg.vim'
 Plug 'jaredgorski/spacecamp'
 Plug 'shinchu/lightline-gruvbox.vim'
 
@@ -88,7 +90,7 @@ if maparg('<C-L>', 'n') ==# ''
 endif
 
 " appearence
-colorscheme spacecamp " colorscheme for nvim and lighline
+colorscheme iceberg " colorscheme for nvim and lighline
 
 " basic settings
 set number relativenumber " Use relative numberlines
@@ -147,7 +149,7 @@ highlight Comment cterm=italic, gui=italic
 
 " lightline overwrite plugin name & use wal colorscheme
 let g:lightline = {
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'iceberg',
       \ 'component_function': {
       \   'cocstatus': 'coc#status',
       \   'currentfunction': 'CocCurrentFunction',
