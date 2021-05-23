@@ -102,6 +102,7 @@ alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listenin
 alias showBlocked='sudo ipfw list'                  # showBlocked:  All ipfw rules inc/ blocked IPs
 
 # Setting fd as the default source for fzf
-export FZF_DEFAULT_COMMAND="fd --type f --exclude '.m4a'"
-export FZF_DEFAULT_OPTS="--exact --height 40% --layout=reverse --border"
+export FZF_DEFAULT_COMMAND="fd "
+export FZF_DEFAULT_OPTS="--exact --height 40% --border"
+export FZF_CTRL_T_COMMAND="fd "
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
