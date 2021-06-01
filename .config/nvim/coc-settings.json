@@ -7,7 +7,7 @@
     "suggest.triggerCompletionWait": 100,
     "suggest.echodocSupport": true,
     //diagnostic
-    "diagnostic.signOffset": 9999999,
+    "diagnostic.signOffset": 100,
 	"diagnostic.errorSign": "●",
 	"diagnostic.warningSign": "●",
     "diagnostic.displayByAle": false,
@@ -33,10 +33,6 @@
     "tslint.autoFixOnSave": true,
     //prettier
     "coc.preferences.formatOnSaveFiletypes": ["css","markdown"],
-    "prettier.statusItemText": "ⓟ ",
-    "prettier.eslintIntegration": true,
-    "prettier.tslintIntegration": true,
-    "prettier.stylelintIntegration": true,
     //emmet
     "emmet.includeLanguages": {"vue-html": "html"},
     //python
@@ -48,24 +44,5 @@
     "eslint.autoFixOnSave": true,
     //golang
     "languageserver": {
-        },
-    //cocbrowser
-    "coc.browser.enable": {
-      "type": "boolean",
-      "default": true,
-      "description": "whether to enable coc-browser"
-	},
-	"coc.browser.shortcut": {
-      "type": "string",
-      "default": "BRO"
-    },
-    "coc.browser.capacity": {
-      "type": "number",
-      "default": 5,
-      "description": "temp file count to storage the words, 1~10"
-   },
-      "coc.browser.priority": {
-      "type": "number",
-      "default": 5
-   }
+        } 
 }

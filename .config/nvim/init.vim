@@ -30,7 +30,6 @@ Plug 'mxw/vim-jsx'
 Plug 'tpope/vim-markdown'
 Plug 'Yggdroot/indentLine'
 
-Plug 'skywind3000/asyncrun.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'wadackel/vim-dogrun'
